@@ -1,0 +1,302 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7f5;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #315b43;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header h1 span {
+    color: #dce9d8;
+}
+
+header input {
+    padding: 12px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+#cartToggle {
+    background-color: white;
+    color: #315b43;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #dce9d8;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* Main Section */
+main {
+    padding: 40px 6%;
+}
+
+main h2 {
+    margin-bottom: 20px;
+}
+
+/* Category Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 1px solid #315b43;
+    color: #315b43;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #315b43;
+    color: white;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0001;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-category {
+    color: #777;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.product-name {
+    margin: 10px 0;
+}
+
+.rating {
+    color: #b18428;
+    margin-bottom: 10px;
+}
+
+.price-row {
+    margin-bottom: 12px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.original-price {
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.add-button {
+    background-color: #315b43;
+    color: white;
+    width: 100%;
+}
+
+.add-button:hover {
+    background-color: #23452f;
+}
+
+/* No Products Message */
+#emptyMessage {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+#loadError {
+    color: red;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cart Background */
+.cart-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+/* Cart Drawer */
+.cart-drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 380px;
+    max-width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 6;
+    padding: 20px;
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cart-header button {
+    font-size: 24px;
+    background: #eee;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.quantity-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.quantity-controls button {
+    background: #eee;
+}
+
+.remove-button {
+    color: red;
+    background: none;
+    padding-left: 0;
+}
+
+.cart-footer {
+    margin-top: 25px;
+}
+
+.cart-footer button {
+    background-color: #315b43;
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 30px 10px;
+    color: #777;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #315b43;
+    color: white;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header input {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
